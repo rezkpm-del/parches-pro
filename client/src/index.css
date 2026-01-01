@@ -42,48 +42,48 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   
-  /* Minimalista Contemporáneo */
-  --color-charcoal-dark: oklch(0.15 0.01 286);
-  --color-cream-soft: oklch(0.96 0.002 286);
-  --color-navy-deep: oklch(0.25 0.08 260);
-  --color-accent-vibrant: oklch(0.65 0.28 340);
-  --color-white-pure: oklch(1 0 0);
+  /* Futurista Eléctrico */
+  --color-neon-magenta: #ff00ff;
+  --color-neon-cyan: #00ffff;
+  --color-night-blue: #0a0e27;
+  --color-violet-intense: #6b0080;
+  --color-white-bright: #ffffff;
 }
 
 :root {
-  --primary: var(--color-accent-vibrant);
-  --primary-foreground: var(--color-white-pure);
-  --secondary: var(--color-navy-deep);
-  --secondary-foreground: var(--color-white-pure);
-  --accent: var(--color-accent-vibrant);
-  --accent-foreground: var(--color-white-pure);
+  --primary: var(--color-neon-magenta);
+  --primary-foreground: var(--color-white-bright);
+  --secondary: var(--color-neon-cyan);
+  --secondary-foreground: var(--color-night-blue);
+  --accent: var(--color-neon-magenta);
+  --accent-foreground: var(--color-white-bright);
   --radius: 8px;
-  --background: var(--color-cream-soft);
-  --foreground: var(--color-charcoal-dark);
-  --card: var(--color-white-pure);
-  --card-foreground: var(--color-charcoal-dark);
-  --popover: var(--color-white-pure);
-  --popover-foreground: var(--color-charcoal-dark);
-  --muted: oklch(0.92 0.005 286);
-  --muted-foreground: oklch(0.5 0.02 286);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: var(--color-white-pure);
-  --border: oklch(0.92 0.005 286);
-  --input: oklch(0.92 0.005 286);
-  --ring: var(--color-accent-vibrant);
-  --sidebar: var(--color-white-pure);
-  --sidebar-foreground: var(--color-charcoal-dark);
-  --sidebar-accent: var(--color-accent-vibrant);
-  --sidebar-accent-foreground: var(--color-white-pure);
-  --sidebar-border: oklch(0.92 0.005 286);
-  --sidebar-ring: var(--color-accent-vibrant);
-  --sidebar-primary: var(--color-accent-vibrant);
-  --sidebar-primary-foreground: var(--color-white-pure);
-  --chart-1: var(--color-accent-vibrant);
-  --chart-2: var(--color-navy-deep);
-  --chart-3: oklch(0.7 0.15 200);
-  --chart-4: oklch(0.8 0.12 100);
-  --chart-5: oklch(0.6 0.1 280);
+  --background: linear-gradient(135deg, #0a0e27 0%, #2d1b4e 50%, #1a0033 100%);
+  --foreground: var(--color-white-bright);
+  --card: rgba(20, 15, 50, 0.6);
+  --card-foreground: var(--color-white-bright);
+  --popover: rgba(20, 15, 50, 0.8);
+  --popover-foreground: var(--color-white-bright);
+  --muted: rgba(255, 255, 255, 0.2);
+  --muted-foreground: rgba(255, 255, 255, 0.6);
+  --destructive: #ff0040;
+  --destructive-foreground: var(--color-white-bright);
+  --border: var(--color-neon-cyan);
+  --input: rgba(0, 255, 255, 0.2);
+  --ring: var(--color-neon-magenta);
+  --sidebar: rgba(20, 15, 50, 0.8);
+  --sidebar-foreground: var(--color-white-bright);
+  --sidebar-accent: var(--color-neon-magenta);
+  --sidebar-accent-foreground: var(--color-white-bright);
+  --sidebar-border: var(--color-neon-cyan);
+  --sidebar-ring: var(--color-neon-magenta);
+  --sidebar-primary: var(--color-neon-magenta);
+  --sidebar-primary-foreground: var(--color-white-bright);
+  --chart-1: var(--color-neon-magenta);
+  --chart-2: var(--color-neon-cyan);
+  --chart-3: #ff00aa;
+  --chart-4: #00ffaa;
+  --chart-5: #aa00ff;
 }
 
 @layer base {
@@ -91,10 +91,12 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #0a0e27 0%, #2d1b4e 50%, #1a0033 100%);
+    background-attachment: fixed;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--color-white-bright);
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -109,7 +111,7 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: -0.03em;
   }
 }
@@ -143,6 +145,27 @@
     }
   }
   
+  /* Patrones geométricos de fondo */
+  .geometric-pattern {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .geometric-pattern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      linear-gradient(45deg, transparent 30%, rgba(0, 255, 255, 0.03) 30%, rgba(0, 255, 255, 0.03) 60%, transparent 60%),
+      linear-gradient(-45deg, transparent 30%, rgba(255, 0, 255, 0.03) 30%, rgba(255, 0, 255, 0.03) 60%, transparent 60%);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
   /* Masonry Gallery */
   .gallery-masonry {
     display: grid;
@@ -165,25 +188,96 @@
     }
   }
   
-  /* Escudo Card */
+  /* Escudo Card con Marco Neón */
   .escudo-card {
-    @apply relative overflow-hidden rounded-lg bg-white transition-all duration-300;
+    @apply relative overflow-hidden rounded-lg transition-all duration-300;
     aspect-ratio: 1;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    background: rgba(20, 15, 50, 0.4);
+    border: 2px solid var(--color-neon-cyan);
+    box-shadow: 
+      0 0 10px rgba(0, 255, 255, 0.3),
+      inset 0 0 10px rgba(0, 255, 255, 0.1);
   }
   
   .escudo-card:hover {
-    @apply shadow-lg;
-    transform: translateY(-4px);
+    border-color: var(--color-neon-magenta);
+    box-shadow: 
+      0 0 20px rgba(255, 0, 255, 0.6),
+      0 0 40px rgba(0, 255, 255, 0.4),
+      inset 0 0 20px rgba(255, 0, 255, 0.2);
+    transform: translateY(-8px) scale(1.02);
   }
   
   .escudo-card img {
     @apply w-full h-full object-contain p-4 transition-transform duration-300;
-    background: linear-gradient(135deg, rgba(255,255,255,0.5) 0%, rgba(240,240,240,0.3) 100%);
+    background: radial-gradient(circle at center, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
   }
   
   .escudo-card:hover img {
-    @apply scale-110;
+    @apply scale-115;
+  }
+  
+  /* Botón Neón */
+  .btn-neon {
+    @apply relative px-8 py-4 font-bold rounded-full transition-all duration-300;
+    background: var(--color-neon-magenta);
+    color: var(--color-night-blue);
+    border: 2px solid var(--color-neon-cyan);
+    box-shadow: 
+      0 0 10px rgba(255, 0, 255, 0.5),
+      0 0 20px rgba(0, 255, 255, 0.3),
+      inset 0 0 10px rgba(255, 255, 255, 0.2);
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  }
+  
+  .btn-neon:hover {
+    box-shadow: 
+      0 0 20px rgba(255, 0, 255, 0.8),
+      0 0 40px rgba(0, 255, 255, 0.6),
+      inset 0 0 20px rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+  }
+  
+  .btn-neon::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 0, 255, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: pulse-glow 2s ease-in-out infinite;
+    z-index: -1;
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.2);
+      opacity: 0.5;
+    }
+  }
+  
+  /* Efecto de resplandor en títulos */
+  .glow-cyan {
+    color: var(--color-white-bright);
+    text-shadow: 
+      0 0 10px rgba(0, 255, 255, 0.5),
+      0 0 20px rgba(0, 255, 255, 0.3),
+      0 0 30px rgba(0, 255, 255, 0.2);
+  }
+  
+  .glow-magenta {
+    color: var(--color-white-bright);
+    text-shadow: 
+      0 0 10px rgba(255, 0, 255, 0.5),
+      0 0 20px rgba(255, 0, 255, 0.3),
+      0 0 30px rgba(255, 0, 255, 0.2);
   }
   
   /* Smooth fade-in for AOS */
