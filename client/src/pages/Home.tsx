@@ -34,6 +34,11 @@ export default function Home() {
     "WhatsApp_Image_2026-01-02_at_11.25.09__2_-removebg-preview.png",
     "WhatsApp_Image_2026-01-02_at_11.25.10__1_-removebg-preview.png",
     "WhatsApp_Image_2026-01-02_at_11.25.10__2_-removebg-preview.png",
+    "WhatsApp_Image_2026-01-02_at_11.25.10__3_-removebg-preview.png",
+    "WhatsApp_Image_2026-01-02_at_11.25.11-removebg-preview.png",
+    "WhatsApp_Image_2026-01-02_at_11.25.34-removebg-preview.png",
+    "WhatsApp_Image_2026-01-02_at_11.25.34__2_-removebg-preview.png",
+    "WhatsApp_Image_2026-01-02_at_11.25.35-removebg-preview.png",
   ];
 
   return (
@@ -246,7 +251,7 @@ export default function Home() {
           </div>
 
           {/* Galería DTF */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
             {DTF_IMAGES.map((img, index) => (
               <div
                 key={img}
