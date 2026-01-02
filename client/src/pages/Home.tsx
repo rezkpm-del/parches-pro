@@ -301,9 +301,9 @@ export default function Home() {
                 Contacto
               </h4>
               <ul className="space-y-2 text-white/70">
-                <li>📧 info@parchespro.com</li>
-                <li>📱 WhatsApp: +1 234 567 890</li>
-                <li>📍 Ciudad, País</li>
+                <li>📧 barbara_mar.s@hotmail.com</li>
+                <li>📱 WhatsApp: +54 1133682905</li>
+                <li>📍 Buenos Aires</li>
               </ul>
             </div>
 
