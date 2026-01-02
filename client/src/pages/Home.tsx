@@ -14,7 +14,6 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import AOS from "aos";
 import { ESCUDOS, getEscudoUrl } from "@/lib/escudos";
-import { siWhatsapp } from "simple-icons";
 
 export default function Home() {
   const [showPulse, setShowPulse] = useState(false);
@@ -382,8 +381,10 @@ export default function Home() {
           width="32"
           height="32"
           fill="white"
-          dangerouslySetInnerHTML={{ __html: siWhatsapp.svg }}
-        />
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3 .97 4.29L2.05 22l6.03-1.71C10.04 21.59 11 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2m0 18c-.89 0-1.74-.2-2.5-.55l-.18-.1-1.85.52.53-1.83-.1-.18C4.2 16.74 4 15.89 4 15c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8m3.71-12.04c-.23-.23-.6-.36-.98-.36-.38 0-.74.13-.98.36l-.91.91c-.23.23-.36.54-.36.9 0 .35.13.67.36.9l.73.73c.98 1.43 2.64 2.33 4.56 2.33.36 0 .72-.03 1.07-.1l.91-.91c.23-.23.36-.6.36-.98 0-.38-.13-.74-.36-.98l-3.4-3.4m-1.8 1.8l.91-.91.73.73-.91.91-.73-.73m2.55 0l.91-.91.73.73-.91.91-.73-.73" />
+        </svg>
       </a>
 
       {/* Footer */}
