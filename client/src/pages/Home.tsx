@@ -11,7 +11,6 @@
  */
 
 import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
 import AOS from "aos";
 import { ESCUDOS, getEscudoUrl } from "@/lib/escudos";
 
@@ -210,7 +209,7 @@ export default function Home() {
       {/* Sección DTF - Personalización */}
       <section className="py-20 md:py-32 bg-gradient-to-r from-purple-300/40 via-pink-300/40 to-orange-300/40 backdrop-blur-sm border-t-4 border-b-4 border-black">
         <div className="container">
-          <div className="mb-16">
+          <div className="mb-16 text-center">
             <h2
               className="text-5xl md:text-6xl font-black text-black mb-4 title-pop-gradient"
               data-aos="fade-up-subtle"
@@ -218,7 +217,7 @@ export default function Home() {
               Personaliza tus remeras como quieras con DTF
             </h2>
             <p
-              className="text-xl text-black/80 max-w-3xl font-bold leading-relaxed"
+              className="text-xl text-black/80 max-w-3xl mx-auto font-bold leading-relaxed"
               data-aos="fade-up-subtle"
               data-aos-delay="100"
             >
@@ -292,14 +291,16 @@ export default function Home() {
       {/* Beneficios - Pop Art */}
       <section className="py-20 md:py-32 bg-white/90 backdrop-blur-sm">
         <div className="container">
-          <h2
-            className="text-5xl md:text-6xl font-black text-black mb-16 title-pop-gradient"
-            data-aos="fade-up-subtle"
-          >
-            ¿Por qué elegirnos?
-          </h2>
+          <div className="text-center mb-16">
+            <h2
+              className="text-5xl md:text-6xl font-black text-black title-pop-gradient"
+              data-aos="fade-up-subtle"
+            >
+              ¿Por qué elegirnos?
+            </h2>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {[
               {
                 title: "Durabilidad Premium",
@@ -371,19 +372,18 @@ export default function Home() {
       {/* WhatsApp Floating Button */}
       <a
         href={whatsappUrl}
+        className={`whatsapp-float ${showPulse ? "pulse" : ""}`}
         target="_blank"
         rel="noopener noreferrer"
-        className={`whatsapp-float ${showPulse ? "pulse" : ""}`}
-        title="Contactar por WhatsApp"
+        aria-label="Contactar por WhatsApp"
       >
         <svg
-          viewBox="0 0 24 24"
-          width="32"
-          height="32"
-          fill="white"
           xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-8 h-8"
         >
-          <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3 .97 4.29L2.05 22l6.03-1.71C10.04 21.59 11 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2m0 18c-.89 0-1.74-.2-2.5-.55l-.18-.1-1.85.52.53-1.83-.1-.18C4.2 16.74 4 15.89 4 15c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8m3.71-12.04c-.23-.23-.6-.36-.98-.36-.38 0-.74.13-.98.36l-.91.91c-.23.23-.36.54-.36.9 0 .35.13.67.36.9l.73.73c.98 1.43 2.64 2.33 4.56 2.33.36 0 .72-.03 1.07-.1l.91-.91c.23-.23.36-.6.36-.98 0-.38-.13-.74-.36-.98l-3.4-3.4m-1.8 1.8l.91-.91.73.73-.91.91-.73-.73m2.55 0l.91-.91.73.73-.91.91-.73-.73" />
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.463 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
         </svg>
       </a>
 
