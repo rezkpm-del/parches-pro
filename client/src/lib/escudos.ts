@@ -1,6 +1,6 @@
 /**
  * Lista de todos los escudos disponibles en la galería
- * 85 diseños únicos sin duplicados
+ * 82 diseños únicos sin duplicados
  */
 
 export const ESCUDOS = [
@@ -12,7 +12,6 @@ export const ESCUDOS = [
   "DSC_0500-2-7-removebg-preview.png",
   "DSC_0500-2-removebg-preview (1).png",
   "DSC_0500-2-removebg-preview.png",
-  "DSC_0500-removebg-preview.png",
   "DSC_0508-2-3-removebg-preview.png",
   "DSC_0508-3-2-removebg-preview.png",
   "DSC_0508-3-3-removebg-preview.png",
@@ -44,9 +43,7 @@ export const ESCUDOS = [
   "DSC_0529-2-3-removebg-preview.png",
   "DSC_0529-2-removebg-preview.png",
   "DSC_0529-3-2-removebg-preview.png",
-  "DSC_0529-3-removebg-preview.png",
   "DSC_0529-4-removebg-preview.png",
-  "DSC_0529-5-removebg-preview.png",
   "DSC_0529-removebg-preview.png",
   "DSC_0530-removebg-preview.png",
   "DSC_0538-2-2-removebg-preview.png",

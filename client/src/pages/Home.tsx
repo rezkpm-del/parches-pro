@@ -286,8 +286,8 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-gradient-to-b from-night-blue/80 to-night-blue border-t-2 border-cyan-500/30 py-12 relative geometric-pattern">
         <div className="container relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 mb-8 max-w-3xl mx-auto">
+            <div className="text-center md:text-left">
               <h3 className="text-3xl font-black text-white mb-3 glow-cyan">
                 ParchesPro
               </h3>
@@ -296,7 +296,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div>
+            <div className="text-center md:text-left">
               <h4 className="text-xl font-black text-white mb-4 glow-magenta">
                 Contacto
               </h4>
@@ -304,38 +304,6 @@ export default function Home() {
                 <li>📧 barbara_mar.s@hotmail.com</li>
                 <li>📱 WhatsApp: +54 1133682905</li>
                 <li>📍 Buenos Aires</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-xl font-black text-white mb-4 glow-cyan">
-                Síguenos
-              </h4>
-              <ul className="space-y-2">
-                <li>
-                  <a
-                    href="#"
-                    className="text-white/70 hover:text-cyan-400 transition-colors"
-                  >
-                    Instagram
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-white/70 hover:text-magenta-400 transition-colors"
-                  >
-                    Facebook
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-white/70 hover:text-cyan-400 transition-colors"
-                  >
-                    TikTok
-                  </a>
-                </li>
               </ul>
             </div>
           </div>
