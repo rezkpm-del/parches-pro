@@ -7,14 +7,17 @@
  * - Marcos de galería con colores vibrantes y cambiantes
  * - Diseño rico en color, vivo y visualmente explosivo
  * - Nueva sección DTF para personalización de prendas
+ * - Botón flotante de WhatsApp con animación de pulso
  */
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import AOS from "aos";
 import { ESCUDOS, getEscudoUrl } from "@/lib/escudos";
 
 export default function Home() {
+  const [showPulse, setShowPulse] = useState(false);
+
   useEffect(() => {
     AOS.init({
       duration: 600,
@@ -22,6 +25,14 @@ export default function Home() {
       once: true,
       offset: 80,
     });
+
+    // Pulse animation every 5 seconds
+    const pulseInterval = setInterval(() => {
+      setShowPulse(true);
+      setTimeout(() => setShowPulse(false), 2000);
+    }, 5000);
+
+    return () => clearInterval(pulseInterval);
   }, []);
 
   const scrollToGallery = () => {
@@ -40,6 +51,10 @@ export default function Home() {
     "WhatsApp_Image_2026-01-02_at_11.25.34__2_-removebg-preview.png",
     "WhatsApp_Image_2026-01-02_at_11.25.35-removebg-preview.png",
   ];
+
+  const whatsappMessage = "Hola ParchesPro! Tengo una consulta sobre los escudos sublimados o el servicio de DTF.";
+  const whatsappNumber = "5491133682905";
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
     <div className="min-h-screen">
@@ -352,6 +367,19 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* WhatsApp Floating Button */}
+      <a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`whatsapp-float ${showPulse ? "pulse" : ""}`}
+        title="Contactar por WhatsApp"
+      >
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.946 1.347l-.355.192-.368-.06c-1.286-.23-2.428-.856-3.274-1.857-.6-.71-1.017-1.547-1.208-2.408-.121-.518-.141-1.063-.088-1.614.054-.552.237-1.091.545-1.568.309-.478.743-.887 1.265-1.181.522-.294 1.104-.464 1.699-.488.595-.025 1.188.087 1.741.332.553.245 1.047.625 1.438 1.109.391.484.67 1.063.81 1.675.14.611.146 1.248.017 1.857-.129.609-.41 1.173-.82 1.632-.41.459-.965.81-1.574.998m5.909-9.91c-1.23-1.23-2.927-1.97-4.712-1.97-1.785 0-3.483.74-4.712 1.97C1.231 3.622.5 5.313.5 7.098s.731 3.476 2.059 4.704c1.228 1.228 2.926 1.97 4.711 1.97s3.483-.742 4.71-1.97c1.328-1.228 2.059-2.926 2.059-4.704s-.731-3.476-2.059-4.704"/>
+        </svg>
+      </a>
 
       {/* Footer */}
       <footer className="bg-white border-t-4 border-black py-12 relative">
