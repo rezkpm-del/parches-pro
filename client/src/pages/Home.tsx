@@ -341,7 +341,7 @@ export default function Home() {
               ¿Listo para transformar tu ropa?
             </h2>
             <p className="text-xl text-black/80 mb-10 font-bold">
-              Explora nuestra colección completa de escudos bordados premium
+              Explora nuestra colección completa de escudos sublimados premium
             </p>
             <button
               onClick={scrollToGallery}
@@ -362,7 +362,7 @@ export default function Home() {
                 ParchesPro
               </h3>
               <p className="text-black/70 font-bold">
-                Escudos bordados premium que transforman tu estilo
+                Escudos sublimados premium que transforman tu estilo
               </p>
             </div>
 
