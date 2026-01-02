@@ -6,6 +6,7 @@
  * - Botones con degradados intensos y efectos de brillo líquido
  * - Marcos de galería con colores vibrantes y cambiantes
  * - Diseño rico en color, vivo y visualmente explosivo
+ * - Nueva sección DTF para personalización de prendas
  */
 
 import { useEffect } from "react";
@@ -27,6 +28,14 @@ export default function Home() {
     document.getElementById("galeria")?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const DTF_IMAGES = [
+    "WhatsApp_Image_2026-01-02_at_11.25.06-removebg-preview.png",
+    "WhatsApp_Image_2026-01-02_at_11.25.09__1_-removebg-preview.png",
+    "WhatsApp_Image_2026-01-02_at_11.25.09__2_-removebg-preview.png",
+    "WhatsApp_Image_2026-01-02_at_11.25.10__1_-removebg-preview.png",
+    "WhatsApp_Image_2026-01-02_at_11.25.10__2_-removebg-preview.png",
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Hero Section - Pop Art */}
@@ -41,7 +50,7 @@ export default function Home() {
               className="text-6xl md:text-8xl lg:text-9xl font-black mb-6 leading-tight title-pop-gradient"
               data-aos="fade-up-subtle"
             >
-              Escudos Bordados
+              Escudos Sublimados
             </h1>
             <h2
               className="text-5xl md:text-7xl font-black mb-8 title-pop-gradient"
@@ -55,7 +64,7 @@ export default function Home() {
               data-aos="fade-up-subtle"
               data-aos-delay="200"
             >
-              Transforma cualquier prenda en una obra única. Nuestros escudos bordados termoadhesivos se aplican en 30 segundos con una plancha.
+              Diseños exclusivos y armamos el diseño que nos pidas.
             </p>
             <button
               onClick={scrollToGallery}
@@ -167,6 +176,88 @@ export default function Home() {
                 <img
                   src={getEscudoUrl(escudo)}
                   alt={`Escudo ${index + 1}`}
+                  loading="lazy"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = "none";
+                  }}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Sección DTF - Personalización */}
+      <section className="py-20 md:py-32 bg-gradient-to-r from-purple-300/40 via-pink-300/40 to-orange-300/40 backdrop-blur-sm border-t-4 border-b-4 border-black">
+        <div className="container">
+          <div className="mb-16">
+            <h2
+              className="text-5xl md:text-6xl font-black text-black mb-4 title-pop-gradient"
+              data-aos="fade-up-subtle"
+            >
+              Personaliza tus remeras como quieras con DTF
+            </h2>
+            <p
+              className="text-xl text-black/80 max-w-3xl font-bold leading-relaxed"
+              data-aos="fade-up-subtle"
+              data-aos-delay="100"
+            >
+              Hacemos DTF, un método versátil para personalizar prendas sin necesidad de sublimar directamente la tela. Funciona sobre algodón, poliéster, mezclas, telas claras u oscuras. El diseño queda flexible y resistente al lavado.
+            </p>
+          </div>
+
+          {/* Pasos DTF */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
+            <div
+              className="p-8 rounded-xl border-4 border-black bg-white/90 hover:bg-white transition-all duration-300 shadow-lg text-center"
+              data-aos="fade-up-subtle"
+              data-aos-delay="200"
+            >
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-pink-400 to-purple-500 flex items-center justify-center mx-auto mb-6 shadow-lg border-4 border-black">
+                <span className="text-4xl font-black text-white">1</span>
+              </div>
+              <h3 className="text-2xl font-black text-black mb-3">Tu Diseño</h3>
+              <p className="text-black/70 font-bold">Nos pasas tu diseño o lo diseñamos nosotros</p>
+            </div>
+
+            <div
+              className="p-8 rounded-xl border-4 border-black bg-white/90 hover:bg-white transition-all duration-300 shadow-lg text-center"
+              data-aos="fade-up-subtle"
+              data-aos-delay="300"
+            >
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center mx-auto mb-6 shadow-lg border-4 border-black">
+                <span className="text-4xl font-black text-white">2</span>
+              </div>
+              <h3 className="text-2xl font-black text-black mb-3">Imprimimos</h3>
+              <p className="text-black/70 font-bold">Lo imprimimos y te lo entregamos listo</p>
+            </div>
+
+            <div
+              className="p-8 rounded-xl border-4 border-black bg-white/90 hover:bg-white transition-all duration-300 shadow-lg text-center"
+              data-aos="fade-up-subtle"
+              data-aos-delay="400"
+            >
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-lime-400 to-green-500 flex items-center justify-center mx-auto mb-6 shadow-lg border-4 border-black">
+                <span className="text-4xl font-black text-white">3</span>
+              </div>
+              <h3 className="text-2xl font-black text-black mb-3">Plancha</h3>
+              <p className="text-black/70 font-bold">Tú solo lo planchas en la tela donde quieras</p>
+            </div>
+          </div>
+
+          {/* Galería DTF */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+            {DTF_IMAGES.map((img, index) => (
+              <div
+                key={img}
+                className="relative overflow-hidden rounded-lg border-4 border-black shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 bg-white p-2"
+                data-aos="fade-up-subtle"
+                data-aos-delay={500 + index * 50}
+              >
+                <img
+                  src={`/images/dtf/${img}`}
+                  alt={`DTF ${index + 1}`}
+                  className="w-full h-full object-contain"
                   loading="lazy"
                   onError={(e) => {
                     (e.target as HTMLImageElement).style.display = "none";
