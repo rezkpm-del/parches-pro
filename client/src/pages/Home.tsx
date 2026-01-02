@@ -14,7 +14,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import AOS from "aos";
 import { ESCUDOS, getEscudoUrl } from "@/lib/escudos";
-import { FaWhatsapp } from "react-icons/fa";
+import { siWhatsapp } from "simple-icons";
 
 export default function Home() {
   const [showPulse, setShowPulse] = useState(false);
@@ -377,7 +377,13 @@ export default function Home() {
         className={`whatsapp-float ${showPulse ? "pulse" : ""}`}
         title="Contactar por WhatsApp"
       >
-        <FaWhatsapp size={32} color="white" />
+        <svg
+          viewBox="0 0 24 24"
+          width="32"
+          height="32"
+          fill="white"
+          dangerouslySetInnerHTML={{ __html: siWhatsapp.svg }}
+        />
       </a>
 
       {/* Footer */}
