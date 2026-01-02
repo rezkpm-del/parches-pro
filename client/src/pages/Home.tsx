@@ -1,12 +1,11 @@
 /**
- * ParchesPro Landing Page - Diseño Futurista Eléctrico
- * Design Philosophy: Estética cyberpunk/synthwave con efectos neón
- * - Gradiente azul noche → violeta intenso
- * - Patrones geométricos brillantes en cian y magenta
- * - Tipografía Poppins audaz con efectos de resplandor
- * - Botones neón magenta con bordes cian y brillo pulsante
- * - Marcos neón en galería con hover effects intensos
- * - Transiciones suaves y efectos de luz en todos los elementos
+ * ParchesPro Landing Page - Pop Art Digital Brillante
+ * Design Philosophy: Explosión de color contemporánea, vibrante y alegre
+ * - Gradiente fluido multicolor (fucsia, naranja, turquesa, amarillo, magenta)
+ * - Títulos con degradados multicolor y contornos brillantes
+ * - Botones con degradados intensos y efectos de brillo líquido
+ * - Marcos de galería con colores vibrantes y cambiantes
+ * - Diseño rico en color, vivo y visualmente explosivo
  */
 
 import { useEffect } from "react";
@@ -30,32 +29,29 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section - Futurista */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden geometric-pattern">
+      {/* Hero Section - Pop Art */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Elementos decorativos de luz */}
-        <div className="absolute top-20 right-20 w-72 h-72 rounded-full bg-gradient-to-br from-cyan-500/20 to-transparent blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 left-20 w-96 h-96 rounded-full bg-gradient-to-tr from-magenta-600/20 to-transparent blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
+        <div className="absolute top-20 right-20 w-72 h-72 rounded-full bg-white/10 blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 left-20 w-96 h-96 rounded-full bg-white/10 blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
 
         <div className="container relative z-10 py-20 text-center">
           <div className="max-w-4xl mx-auto">
             <h1
-              className="text-6xl md:text-8xl lg:text-9xl font-black text-white mb-6 leading-tight glow-cyan"
+              className="text-6xl md:text-8xl lg:text-9xl font-black mb-6 leading-tight title-pop-gradient"
               data-aos="fade-up-subtle"
-              style={{
-                textShadow: "0 0 20px rgba(0, 255, 255, 0.8), 0 0 40px rgba(0, 255, 255, 0.5)",
-              }}
             >
               Escudos Bordados
             </h1>
             <h2
-              className="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-magenta-500 to-cyan-400 mb-8"
+              className="text-5xl md:text-7xl font-black mb-8 title-pop-gradient"
               data-aos="fade-up-subtle"
               data-aos-delay="100"
             >
               de Calidad Premium
             </h2>
             <p
-              className="text-xl md:text-2xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed"
+              className="text-xl md:text-2xl text-black/80 mb-12 max-w-3xl mx-auto leading-relaxed font-bold"
               data-aos="fade-up-subtle"
               data-aos-delay="200"
             >
@@ -63,7 +59,7 @@ export default function Home() {
             </p>
             <button
               onClick={scrollToGallery}
-              className="btn-neon text-lg md:text-xl"
+              className="btn-pop-art text-lg md:text-xl"
               data-aos="fade-up-subtle"
               data-aos-delay="300"
             >
@@ -73,11 +69,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Cómo Funciona - Futurista */}
-      <section className="py-20 md:py-32 bg-gradient-to-b from-transparent via-purple-900/20 to-transparent relative geometric-pattern">
-        <div className="container relative z-10">
+      {/* Cómo Funciona - Pop Art */}
+      <section className="py-20 md:py-32 bg-white/90 backdrop-blur-sm">
+        <div className="container">
           <h2
-            className="text-5xl md:text-6xl font-black text-center text-white mb-16 glow-magenta"
+            className="text-5xl md:text-6xl font-black text-center text-black mb-16 title-pop-gradient"
             data-aos="fade-up-subtle"
           >
             Tres pasos simples
@@ -86,51 +82,51 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {/* Step 1 */}
             <div
-              className="p-8 rounded-xl border-2 border-cyan-500/50 bg-gradient-to-br from-cyan-500/10 to-transparent backdrop-blur-sm hover:border-magenta-500 transition-all duration-300"
+              className="p-8 rounded-xl border-4 border-black bg-gradient-to-br from-yellow-300/30 to-orange-300/30 hover:from-pink-300/40 hover:to-purple-300/40 transition-all duration-300 shadow-lg"
               data-aos="fade-up-subtle"
               data-aos-delay="100"
             >
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center mx-auto mb-6 shadow-lg shadow-cyan-500/50">
-                <span className="text-4xl font-black text-night-blue">1</span>
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-orange-400 to-pink-500 flex items-center justify-center mx-auto mb-6 shadow-lg border-4 border-black">
+                <span className="text-4xl font-black text-white">1</span>
               </div>
-              <h3 className="text-2xl font-black text-white text-center mb-3">
+              <h3 className="text-2xl font-black text-black text-center mb-3">
                 Elige tu diseño
               </h3>
-              <p className="text-white/70 text-center">
-                Selecciona entre más de 85 diseños exclusivos
+              <p className="text-black/70 text-center font-bold">
+                Selecciona entre más de 82 diseños exclusivos
               </p>
             </div>
 
             {/* Step 2 */}
             <div
-              className="p-8 rounded-xl border-2 border-magenta-500/50 bg-gradient-to-br from-magenta-500/10 to-transparent backdrop-blur-sm hover:border-cyan-500 transition-all duration-300"
+              className="p-8 rounded-xl border-4 border-black bg-gradient-to-br from-cyan-300/30 to-blue-300/30 hover:from-magenta-300/40 hover:to-pink-300/40 transition-all duration-300 shadow-lg"
               data-aos="fade-up-subtle"
               data-aos-delay="200"
             >
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-magenta-500 to-magenta-600 flex items-center justify-center mx-auto mb-6 shadow-lg shadow-magenta-500/50">
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center mx-auto mb-6 shadow-lg border-4 border-black">
                 <span className="text-4xl font-black text-white">2</span>
               </div>
-              <h3 className="text-2xl font-black text-white text-center mb-3">
+              <h3 className="text-2xl font-black text-black text-center mb-3">
                 Posiciona en la prenda
               </h3>
-              <p className="text-white/70 text-center">
+              <p className="text-black/70 text-center font-bold">
                 Coloca el escudo donde desees
               </p>
             </div>
 
             {/* Step 3 */}
             <div
-              className="p-8 rounded-xl border-2 border-cyan-500/50 bg-gradient-to-br from-cyan-500/10 to-transparent backdrop-blur-sm hover:border-magenta-500 transition-all duration-300"
+              className="p-8 rounded-xl border-4 border-black bg-gradient-to-br from-lime-300/30 to-green-300/30 hover:from-yellow-300/40 hover:to-orange-300/40 transition-all duration-300 shadow-lg"
               data-aos="fade-up-subtle"
               data-aos-delay="300"
             >
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center mx-auto mb-6 shadow-lg shadow-cyan-500/50">
-                <span className="text-4xl font-black text-night-blue">3</span>
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-lime-400 to-green-500 flex items-center justify-center mx-auto mb-6 shadow-lg border-4 border-black">
+                <span className="text-4xl font-black text-white">3</span>
               </div>
-              <h3 className="text-2xl font-black text-white text-center mb-3">
+              <h3 className="text-2xl font-black text-black text-center mb-3">
                 Plancha 30 segundos
               </h3>
-              <p className="text-white/70 text-center">
+              <p className="text-black/70 text-center font-bold">
                 Aplica calor y listo
               </p>
             </div>
@@ -138,25 +134,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Galería de Escudos - Marcos Neón */}
+      {/* Galería de Escudos - Marcos Vibrantes */}
       <section
         id="galeria"
-        className="py-20 md:py-32 relative geometric-pattern"
+        className="py-20 md:py-32 bg-white/80 backdrop-blur-sm"
       >
-        <div className="container relative z-10">
+        <div className="container">
           <div className="mb-16">
             <h2
-              className="text-5xl md:text-6xl font-black text-white mb-4 glow-cyan"
+              className="text-5xl md:text-6xl font-black text-black mb-4 title-pop-gradient"
               data-aos="fade-up-subtle"
             >
               Nuestra Colección
             </h2>
             <p
-              className="text-xl text-white/70 max-w-2xl"
+              className="text-xl text-black/70 max-w-2xl font-bold"
               data-aos="fade-up-subtle"
               data-aos-delay="100"
             >
-              Más de 85 diseños exclusivos, cada uno bordado con precisión y calidad premium.
+              Más de 82 diseños exclusivos, cada uno bordado con precisión y calidad premium.
             </p>
           </div>
 
@@ -182,11 +178,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Beneficios - Futurista */}
-      <section className="py-20 md:py-32 bg-gradient-to-b from-transparent via-purple-900/20 to-transparent relative geometric-pattern">
-        <div className="container relative z-10">
+      {/* Beneficios - Pop Art */}
+      <section className="py-20 md:py-32 bg-white/90 backdrop-blur-sm">
+        <div className="container">
           <h2
-            className="text-5xl md:text-6xl font-black text-white mb-16 glow-magenta"
+            className="text-5xl md:text-6xl font-black text-black mb-16 title-pop-gradient"
             data-aos="fade-up-subtle"
           >
             ¿Por qué elegirnos?
@@ -197,85 +193,63 @@ export default function Home() {
               {
                 title: "Durabilidad Premium",
                 description: "Nuestros escudos resisten lavados intensos sin perder color ni forma",
-                color: "cyan",
+                gradient: "from-orange-300 to-pink-300",
               },
               {
                 title: "100% Lavables",
                 description: "Perfectos para lavadora y secadora - mantienen su calidad intacta",
-                color: "magenta",
+                gradient: "from-cyan-300 to-blue-300",
               },
               {
                 title: "Aplicación Instantánea",
                 description: "Solo 30 segundos con la plancha - sin costuras ni complicaciones",
-                color: "cyan",
+                gradient: "from-lime-300 to-green-300",
               },
               {
                 title: "Diseños Exclusivos",
                 description: "Colecciones que no encontrarás en ningún otro lugar",
-                color: "magenta",
+                gradient: "from-yellow-300 to-orange-300",
               },
-            ].map((benefit, index) => {
-              const isCyan = benefit.color === "cyan";
-              return (
-                <div
-                  key={benefit.title}
-                  className={`p-8 rounded-xl border-2 ${
-                    isCyan ? "border-cyan-500/50" : "border-magenta-500/50"
-                  } bg-gradient-to-br ${
-                    isCyan
-                      ? "from-cyan-500/10 to-transparent"
-                      : "from-magenta-500/10 to-transparent"
-                  } backdrop-blur-sm hover:${
-                    isCyan ? "border-magenta-500" : "border-cyan-500"
-                  } transition-all duration-300`}
-                  data-aos="fade-up-subtle"
-                  data-aos-delay={index * 100}
-                >
-                  <div
-                    className={`flex items-start gap-4 ${
-                      isCyan ? "shadow-lg shadow-cyan-500/30" : "shadow-lg shadow-magenta-500/30"
-                    }`}
-                  >
-                    <div
-                      className={`w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 font-black text-2xl ${
-                        isCyan
-                          ? "bg-gradient-to-br from-cyan-500 to-cyan-600 text-night-blue"
-                          : "bg-gradient-to-br from-magenta-500 to-magenta-600 text-white"
-                      }`}
-                    >
-                      ✓
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-black text-white mb-2">
-                        {benefit.title}
-                      </h3>
-                      <p className="text-white/70">{benefit.description}</p>
-                    </div>
+            ].map((benefit, index) => (
+              <div
+                key={benefit.title}
+                className={`p-8 rounded-xl border-4 border-black bg-gradient-to-br ${benefit.gradient}/40 hover:${benefit.gradient}/60 transition-all duration-300 shadow-lg`}
+                data-aos="fade-up-subtle"
+                data-aos-delay={index * 100}
+              >
+                <div className="flex items-start gap-4">
+                  <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${benefit.gradient} flex items-center justify-center flex-shrink-0 font-black text-2xl text-white border-3 border-black shadow-lg`}>
+                    ✓
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-black text-black mb-2">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-black/70 font-bold">{benefit.description}</p>
                   </div>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section - Futurista */}
-      <section className="py-20 md:py-32 relative overflow-hidden geometric-pattern">
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/20 via-magenta-600/20 to-cyan-600/20"></div>
+      {/* CTA Section - Pop Art */}
+      <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="container relative z-10">
           <div
-            className="max-w-3xl mx-auto text-center"
+            className="max-w-3xl mx-auto text-center p-12 rounded-2xl border-4 border-black bg-white/95 shadow-2xl"
             data-aos="fade-up-subtle"
           >
-            <h2 className="text-5xl md:text-6xl font-black text-white mb-6 glow-cyan">
+            <h2 className="text-5xl md:text-6xl font-black text-black mb-6 title-pop-gradient">
               ¿Listo para transformar tu ropa?
             </h2>
-            <p className="text-xl text-white/80 mb-10">
+            <p className="text-xl text-black/80 mb-10 font-bold">
               Explora nuestra colección completa de escudos bordados premium
             </p>
             <button
               onClick={scrollToGallery}
-              className="btn-neon text-lg md:text-xl"
+              className="btn-pop-art text-lg md:text-xl"
             >
               Ver Colección Completa
             </button>
@@ -284,23 +258,23 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-b from-night-blue/80 to-night-blue border-t-2 border-cyan-500/30 py-12 relative geometric-pattern">
+      <footer className="bg-white border-t-4 border-black py-12 relative">
         <div className="container relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 mb-8 max-w-3xl mx-auto">
             <div className="text-center md:text-left">
-              <h3 className="text-3xl font-black text-white mb-3 glow-cyan">
+              <h3 className="text-3xl font-black text-black mb-3 title-pop-gradient">
                 ParchesPro
               </h3>
-              <p className="text-white/70">
+              <p className="text-black/70 font-bold">
                 Escudos bordados premium que transforman tu estilo
               </p>
             </div>
 
             <div className="text-center md:text-left">
-              <h4 className="text-xl font-black text-white mb-4 glow-magenta">
+              <h4 className="text-xl font-black text-black mb-4 title-pop-gradient">
                 Contacto
               </h4>
-              <ul className="space-y-2 text-white/70">
+              <ul className="space-y-2 text-black/70 font-bold">
                 <li>📧 barbara_mar.s@hotmail.com</li>
                 <li>📱 WhatsApp: +54 1133682905</li>
                 <li>📍 Buenos Aires</li>
@@ -308,7 +282,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="border-t border-cyan-500/20 pt-8 text-center text-white/60">
+          <div className="border-t-4 border-black pt-8 text-center text-black/60 font-bold">
             <p>© 2025 ParchesPro. Todos los derechos reservados.</p>
           </div>
         </div>

@@ -42,48 +42,50 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   
-  /* Futurista Eléctrico */
-  --color-neon-magenta: #ff00ff;
-  --color-neon-cyan: #00ffff;
-  --color-night-blue: #0a0e27;
-  --color-violet-intense: #6b0080;
+  /* Pop Art Digital */
+  --color-pop-fucsia: #ff006e;
+  --color-pop-naranja: #ff6b35;
+  --color-pop-turquesa: #00d9ff;
+  --color-pop-amarillo: #ffff00;
+  --color-pop-magenta: #ff00ff;
+  --color-pop-lima: #00ff88;
   --color-white-bright: #ffffff;
 }
 
 :root {
-  --primary: var(--color-neon-magenta);
+  --primary: var(--color-pop-fucsia);
   --primary-foreground: var(--color-white-bright);
-  --secondary: var(--color-neon-cyan);
-  --secondary-foreground: var(--color-night-blue);
-  --accent: var(--color-neon-magenta);
+  --secondary: var(--color-pop-turquesa);
+  --secondary-foreground: #000;
+  --accent: var(--color-pop-naranja);
   --accent-foreground: var(--color-white-bright);
   --radius: 8px;
-  --background: linear-gradient(135deg, #0a0e27 0%, #2d1b4e 50%, #1a0033 100%);
-  --foreground: var(--color-white-bright);
-  --card: rgba(20, 15, 50, 0.6);
-  --card-foreground: var(--color-white-bright);
-  --popover: rgba(20, 15, 50, 0.8);
-  --popover-foreground: var(--color-white-bright);
-  --muted: rgba(255, 255, 255, 0.2);
-  --muted-foreground: rgba(255, 255, 255, 0.6);
+  --background: linear-gradient(135deg, #ff006e 0%, #ff6b35 25%, #ffff00 50%, #00d9ff 75%, #ff00ff 100%);
+  --foreground: #000;
+  --card: rgba(255, 255, 255, 0.95);
+  --card-foreground: #000;
+  --popover: rgba(255, 255, 255, 0.98);
+  --popover-foreground: #000;
+  --muted: rgba(0, 0, 0, 0.1);
+  --muted-foreground: rgba(0, 0, 0, 0.6);
   --destructive: #ff0040;
   --destructive-foreground: var(--color-white-bright);
-  --border: var(--color-neon-cyan);
-  --input: rgba(0, 255, 255, 0.2);
-  --ring: var(--color-neon-magenta);
-  --sidebar: rgba(20, 15, 50, 0.8);
-  --sidebar-foreground: var(--color-white-bright);
-  --sidebar-accent: var(--color-neon-magenta);
+  --border: #000;
+  --input: rgba(0, 0, 0, 0.1);
+  --ring: var(--color-pop-fucsia);
+  --sidebar: rgba(255, 255, 255, 0.95);
+  --sidebar-foreground: #000;
+  --sidebar-accent: var(--color-pop-fucsia);
   --sidebar-accent-foreground: var(--color-white-bright);
-  --sidebar-border: var(--color-neon-cyan);
-  --sidebar-ring: var(--color-neon-magenta);
-  --sidebar-primary: var(--color-neon-magenta);
+  --sidebar-border: #000;
+  --sidebar-ring: var(--color-pop-fucsia);
+  --sidebar-primary: var(--color-pop-fucsia);
   --sidebar-primary-foreground: var(--color-white-bright);
-  --chart-1: var(--color-neon-magenta);
-  --chart-2: var(--color-neon-cyan);
-  --chart-3: #ff00aa;
-  --chart-4: #00ffaa;
-  --chart-5: #aa00ff;
+  --chart-1: var(--color-pop-fucsia);
+  --chart-2: var(--color-pop-naranja);
+  --chart-3: var(--color-pop-turquesa);
+  --chart-4: var(--color-pop-amarillo);
+  --chart-5: var(--color-pop-magenta);
 }
 
 @layer base {
@@ -91,13 +93,28 @@
     @apply border-border outline-ring/50;
   }
   body {
-    background: linear-gradient(135deg, #0a0e27 0%, #2d1b4e 50%, #1a0033 100%);
+    background: linear-gradient(135deg, #ff006e 0%, #ff6b35 25%, #ffff00 50%, #00d9ff 75%, #ff00ff 100%);
     background-attachment: fixed;
+    background-size: 400% 400%;
+    animation: gradient-shift 15s ease infinite;
     font-family: 'Poppins', sans-serif;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: -0.01em;
-    color: var(--color-white-bright);
+    color: #000;
   }
+  
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
   [type="button"]:not(:disabled),
@@ -111,7 +128,7 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-weight: 800;
+    font-weight: 900;
     letter-spacing: -0.03em;
   }
 }
@@ -145,27 +162,6 @@
     }
   }
   
-  /* Patrones geométricos de fondo */
-  .geometric-pattern {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .geometric-pattern::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-      linear-gradient(45deg, transparent 30%, rgba(0, 255, 255, 0.03) 30%, rgba(0, 255, 255, 0.03) 60%, transparent 60%),
-      linear-gradient(-45deg, transparent 30%, rgba(255, 0, 255, 0.03) 30%, rgba(255, 0, 255, 0.03) 60%, transparent 60%);
-    background-size: 60px 60px;
-    pointer-events: none;
-    z-index: 1;
-  }
-  
   /* Masonry Gallery */
   .gallery-masonry {
     display: grid;
@@ -188,57 +184,60 @@
     }
   }
   
-  /* Escudo Card con Marco Neón */
+  /* Escudo Card con Marcos Vibrantes */
   .escudo-card {
     @apply relative overflow-hidden rounded-lg transition-all duration-300;
     aspect-ratio: 1;
-    background: rgba(20, 15, 50, 0.4);
-    border: 2px solid var(--color-neon-cyan);
+    background: white;
+    border: 4px solid;
+    border-image: linear-gradient(135deg, #ff006e, #ff6b35, #ffff00, #00d9ff) 1;
     box-shadow: 
-      0 0 10px rgba(0, 255, 255, 0.3),
-      inset 0 0 10px rgba(0, 255, 255, 0.1);
+      0 0 15px rgba(255, 0, 110, 0.4),
+      0 0 25px rgba(255, 107, 53, 0.3),
+      0 8px 16px rgba(0, 0, 0, 0.15);
   }
   
   .escudo-card:hover {
-    border-color: var(--color-neon-magenta);
+    border-image: linear-gradient(45deg, #00d9ff, #ff00ff, #00ff88, #ff006e) 1;
     box-shadow: 
-      0 0 20px rgba(255, 0, 255, 0.6),
-      0 0 40px rgba(0, 255, 255, 0.4),
-      inset 0 0 20px rgba(255, 0, 255, 0.2);
-    transform: translateY(-8px) scale(1.02);
+      0 0 25px rgba(0, 217, 255, 0.6),
+      0 0 40px rgba(255, 0, 255, 0.5),
+      0 0 60px rgba(0, 255, 136, 0.3),
+      0 12px 24px rgba(0, 0, 0, 0.2);
+    transform: translateY(-12px) scale(1.03);
   }
   
   .escudo-card img {
     @apply w-full h-full object-contain p-4 transition-transform duration-300;
-    background: radial-gradient(circle at center, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle at center, rgba(255, 107, 53, 0.08) 0%, transparent 70%);
   }
   
   .escudo-card:hover img {
-    @apply scale-115;
+    @apply scale-120;
   }
   
-  /* Botón Neón */
-  .btn-neon {
-    @apply relative px-8 py-4 font-bold rounded-full transition-all duration-300;
-    background: var(--color-neon-magenta);
-    color: var(--color-night-blue);
-    border: 2px solid var(--color-neon-cyan);
+  /* Botón Pop Art */
+  .btn-pop-art {
+    @apply relative px-8 py-4 font-black rounded-full transition-all duration-300 text-white;
+    background: linear-gradient(135deg, #ff6b35 0%, #ff006e 50%, #ff00ff 100%);
+    border: 3px solid #000;
     box-shadow: 
-      0 0 10px rgba(255, 0, 255, 0.5),
-      0 0 20px rgba(0, 255, 255, 0.3),
-      inset 0 0 10px rgba(255, 255, 255, 0.2);
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+      0 0 20px rgba(255, 107, 53, 0.6),
+      0 0 40px rgba(255, 0, 110, 0.4),
+      0 8px 16px rgba(0, 0, 0, 0.2);
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
   }
   
-  .btn-neon:hover {
+  .btn-pop-art:hover {
     box-shadow: 
-      0 0 20px rgba(255, 0, 255, 0.8),
-      0 0 40px rgba(0, 255, 255, 0.6),
-      inset 0 0 20px rgba(255, 255, 255, 0.3);
-    transform: scale(1.05);
+      0 0 30px rgba(255, 107, 53, 0.8),
+      0 0 60px rgba(255, 0, 110, 0.6),
+      0 0 80px rgba(255, 0, 255, 0.4),
+      0 12px 24px rgba(0, 0, 0, 0.3);
+    transform: scale(1.08) translateY(-2px);
   }
   
-  .btn-neon::before {
+  .btn-pop-art::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -246,38 +245,33 @@
     transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, rgba(255, 0, 255, 0.3) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
     border-radius: 50%;
-    animation: pulse-glow 2s ease-in-out infinite;
+    animation: pulse-pop 2s ease-in-out infinite;
     z-index: -1;
   }
   
-  @keyframes pulse-glow {
+  @keyframes pulse-pop {
     0%, 100% {
       transform: translate(-50%, -50%) scale(1);
-      opacity: 1;
+      opacity: 0.8;
     }
     50% {
-      transform: translate(-50%, -50%) scale(1.2);
-      opacity: 0.5;
+      transform: translate(-50%, -50%) scale(1.3);
+      opacity: 0.3;
     }
   }
   
-  /* Efecto de resplandor en títulos */
-  .glow-cyan {
-    color: var(--color-white-bright);
+  /* Título con degradado multicolor */
+  .title-pop-gradient {
+    background: linear-gradient(90deg, #ff006e 0%, #ff6b35 25%, #ffff00 50%, #00d9ff 75%, #ff00ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     text-shadow: 
-      0 0 10px rgba(0, 255, 255, 0.5),
-      0 0 20px rgba(0, 255, 255, 0.3),
-      0 0 30px rgba(0, 255, 255, 0.2);
-  }
-  
-  .glow-magenta {
-    color: var(--color-white-bright);
-    text-shadow: 
-      0 0 10px rgba(255, 0, 255, 0.5),
-      0 0 20px rgba(255, 0, 255, 0.3),
-      0 0 30px rgba(255, 0, 255, 0.2);
+      2px 2px 0px rgba(255, 0, 110, 0.3),
+      4px 4px 0px rgba(255, 107, 53, 0.2);
+    filter: drop-shadow(0 0 10px rgba(255, 107, 53, 0.4)) drop-shadow(0 0 20px rgba(0, 217, 255, 0.2));
   }
   
   /* Smooth fade-in for AOS */
